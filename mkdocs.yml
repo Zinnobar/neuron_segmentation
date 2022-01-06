@@ -1,0 +1,11 @@
+site_name: neuron_segmentation
+site_description: A simple plugin to use with napari
+site_author: Ryan Chen
+
+theme: readthedocs
+
+
+repo_url: https://github.com/Zinnobar/neuron_segmentation
+
+pages:
+- Home: index.md

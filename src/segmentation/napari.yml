@@ -1,0 +1,48 @@
+name: neuron_segmentation
+display_name: Neuron segmentation
+contributions:
+  commands:
+    - id: neuron_segmentation.get_reader
+      python_name: segmentation._reader:napari_get_reader
+      title: Open data with Neuron segmentation
+    - id: neuron_segmentation.write_multiple
+      python_name: segmentation._writer:write_multiple
+      title: Save multi-layer data with Neuron segmentation
+    - id: neuron_segmentation.write_single_image
+      python_name: segmentation._writer:write_single_image
+      title: Save image data with Neuron segmentation
+    - id: neuron_segmentation.make_sample_data
+      python_name: segmentation._sample_data:make_sample_data
+      title: Load sample data from Neuron segmentation 
+    - id: neuron_segmentation.make_qwidget
+      python_name: segmentation._widget:ExampleQWidget
+      title: Make example QWidget
+    - id: neuron_segmentation.make_magic_widget
+      python_name: segmentation._widget:example_magic_widget
+      title: Make example magic widget
+    - id: neuron_segmentation.make_func_widget
+      python_name: segmentation._widget:example_function_widget
+      title: Make example function widget 
+  readers:
+    - command: neuron_segmentation.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy'] 
+  writers:
+    - command: neuron_segmentation.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: neuron_segmentation.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy'] 
+  sample_data:
+    - command: neuron_segmentation.make_sample_data
+      display_name: Neuron segmentation
+      key: unique_id.1 
+  widgets:
+    - command: neuron_segmentation.make_qwidget
+      display_name: Example QWidget
+    - command: neuron_segmentation.make_magic_widget
+      display_name: Example Magic Widget
+    - command: neuron_segmentation.make_func_widget
+      autogenerate: true
+      display_name: Example Function Widget 
